@@ -1,5 +1,6 @@
-# tinyHTTPie - The Evolution of a Script
+# The Evolution of a Script
 
+## 1. A Simple Script
 
 This repository contains different snapshots for the article series [](). multi-part series "The Evolution of a Script"
 

@@ -66,5 +66,5 @@ tihttp -h https://the-coding-lab.com/
 ```
 
 <div>
-<p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/1-A-Simple-Script"><< section 1</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/3-Argparse-Module">section 3 >></a> </p>
+<p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/1-Simple-Script"><< section 1</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/3-Argparse-Module">section 3 >></a> </p>
 </div>

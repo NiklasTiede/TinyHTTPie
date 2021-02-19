@@ -1,15 +1,13 @@
-# tinyHTTPie
+# 8. Publishing at PyPI
 
-This repository contains the code to the multi-part series "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
+This repository contains the code belonging to the second section of the article "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
 
-Each branch contains the HTTP client `tinyhttp` at a different stage of its development.
+Uploading to [PyPI.org]().
 
-1. [A Simple Script](https://github.com/NiklasTiede/tinyHTTPie/tree/1-Simple-Script)
-2. [Sys Module](https://github.com/NiklasTiede/tinyHTTPie/tree/2-Sys-Module)
-3. [Argparse Module](https://github.com/NiklasTiede/tinyHTTPie/tree/3-Argparse-Module)
-4. [Distribution via install.sh](https://github.com/NiklasTiede/tinyHTTPie/tree/4-Distributing-by-Installscript)
-5. [Distribution via setup.py](https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File)
-6. [Testing and CI](https://github.com/NiklasTiede/tinyHTTPie/tree/6-Testing-and-CI)
-7. [Documentation](https://github.com/NiklasTiede/tinyHTTPie/tree/7-Documentation)
-8. [Publishing at PyPI](https://github.com/NiklasTiede/tinyHTTPie/tree/8-Publishing-at-PyPI)
-9. [Publishing at Anaconda](https://github.com/NiklasTiede/tinyHTTPie/tree/9-Publishing-at-Anaconda)
+```bash
+
+```
+
+<div>
+<p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/7-Documentation"><< section 7</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/9-Publishing-at-Anaconda">section 9 >></a> </p>
+</div>

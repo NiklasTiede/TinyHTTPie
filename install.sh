@@ -3,7 +3,6 @@
 # pipenv venv created, shebang line added, giving permissions
 # create permanent alias 
 
-
 if [[ ! -d ~/MyScripts ]]; then
     mkdir ~/MyScripts
     folder1=~/MyScripts

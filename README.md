@@ -12,12 +12,13 @@ git checkout 4-Distributing-by-Installscript
 bash install.sh
 ```
 
-To install the script do:
+It will create the directory `MyScripts` in your home, copying `tinyhttp.py`, and `requirementx.txt` into it and rebuilt the virtual environment using `pipenv`. The shebang line is added to the top of `tinyhttp.py` the alias to your .bashrc/.zshrc or .aliases file.
 
 ```bash
-git clone
-
+tihttp -H google.com
 ```
+
+voilà, the tool was installed using a shell script! But such a script can be quite error prone for someone like me and there's a nicer tool for installing python apps/libraries: the `setup.py` file!
 
 <div>
 <p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/3-Argparse-Module"><< section 3</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File">section 5 >></a> </p>

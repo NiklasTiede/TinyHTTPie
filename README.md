@@ -29,7 +29,7 @@ setuptools.setup(
 If you're creating a command line tool, this tool should be easily called with a command. The `entry_points` values describes where the entry point to your command line application is. We define `tihttp` as command. The expression after the semicolon points to the function which should be called to enter our tool.
 
 <p align="center">
-<img src="docs/script_entrypoint.png">
+    <img src="docs/script_entrypoint.png" width="400px">
 </p>
 
 We can now easily install the tool locally.

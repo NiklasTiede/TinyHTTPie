@@ -85,30 +85,30 @@ elif [[ $MYSHELL  == "bash" ]]; then
     fi
 fi
 
-echo "$ALIASFILE is where we placed the alias."
+# echo "$ALIASFILE is where we placed the alias."
 
-# change permissions
-SCRIPTPATH=~/MyScripts/tinyhttp/tinyhttp.py
-chmod +x $SCRIPTPATH
+# # change permissions
+# SCRIPTPATH=~/MyScripts/tinyhttp/tinyhttp.py
+# chmod +x $SCRIPTPATH
 
-# adding alias (I prefer using an alias, instead of polluting my PATH)
-echo $SCRIPTPATH
-echo "\n# alias for the tinyHTTP script (stored within ~/MyScripts/tinyhttp)\nalias tihttp='$SCRIPTPATH'" >> $ALIASFILE
-source $ALIASFILE
+# # adding alias (I prefer using an alias, instead of polluting my PATH)
+# echo $SCRIPTPATH
+# echo "\n# alias for the tinyHTTP script (stored within ~/MyScripts/tinyhttp)\nalias tihttp='$SCRIPTPATH'" >> $ALIASFILE
+# source $ALIASFILE
 
-# test
-if [[ ! $(tihttp) ]]; then
-    echo "tihttp alias is not working"
-    echo "Instead this scripts tries to add tihttp to your PATH"
-fi
+# # test
+# if [[ ! $(tihttp) ]]; then
+#     echo "tihttp alias is not working"
+#     echo "Instead this scripts tries to add tihttp to your PATH"
+# fi
 
-# I prefer using an alias, instead of adding it to the PATH!
-# export PATH="$HOME/MyScripts/tinyhttp:$PATH"
+# # I prefer using an alias, instead of adding it to the PATH!
+# # export PATH="$HOME/MyScripts/tinyhttp:$PATH"
 
-# test (tihttp --version)
-EXIS_TEST=$(tihttp --version)
-EXP_TEST
-if [[ $EXIS_TEST != $EXP_TEST ]]; then
-    echo "Not properly installed"
-elif [[ $EXIS_TEST != $EXP_TEST ]]; then
-    echo "tihttp was installed successfully!"
+# # test (tihttp --version)
+# EXIS_TEST=$(tihttp --version)
+# EXP_TEST
+# if [[ $EXIS_TEST != $EXP_TEST ]]; then
+#     echo "Not properly installed"
+# elif [[ $EXIS_TEST != $EXP_TEST ]]; then
+#     echo "tihttp was installed successfully!"

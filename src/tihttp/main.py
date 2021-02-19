@@ -8,10 +8,7 @@ import sys
 def main(argv):
     parser = build_parser()
     args = parser.parse_args(argv[1:])
-
-    # print(vars(args))
-    # print()
-
+    
     url = ''
 
     if args.URL:

@@ -6,6 +6,14 @@ Writing shell scripts for installation can be an entry point of vulnerabilities.
 
 ```python
 
+import pathlib
+import setuptools
+
+
+setuptools.setup(
+    name="tihttp",
+    v
+)
 
 
 ```
@@ -16,7 +24,7 @@ with the help of this file we can easily install the script:
 git clone https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File.git
 cd tinyHTTPie
 pip install .
-pip install setup.py
+tihttp -H google.com        # test
 pip install
 ```
 

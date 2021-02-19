@@ -27,5 +27,5 @@ pip install git+https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by
 ```
 
 <div>
-<p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/3-Argparse-Module"><< section 3</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File">section 5 >></a> </p>
+<p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/4-Distributing-by-Installscript"><< section 4</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/6-Testing-and-CI">section 6 >></a> </p>
 </div>

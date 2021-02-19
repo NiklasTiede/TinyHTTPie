@@ -1,91 +1,52 @@
+#!/usr/bin/python
 
-import argparse
 import requests
 import collections
 import sys
 
+arg_array, input_url = sys.argv[1:], ''
+body_bool, header_bool = False, False
 
-def main(argv):
-    parser = build_parser()
-    args = parser.parse_args(argv[1:])
+if '-b' in arg_array:
+    arg_array.remove('-b')
+    body_bool = True
 
-    # print(vars(args))
-    # print()
+if '-h' in arg_array:
+    arg_array.remove('-h')
+    header_bool = True
 
-    url = ''
+if len(arg_array) > 1:
+    print('Too many arguments')
+    sys.exit(0)
 
-    if args.URL:
-        url = args.URL
+if len(arg_array) == 1:
+    input_url = arg_array[0]
 
-    if ('http://' or 'https://' or 'http://www.' or 'https://www.') not in url:
-        if url[:4] == 'www.':
-            url = url[4:]
-        url = 'http://' + url
+if not input_url:
+    print('No URL was given')
+    sys.exit(0)
 
-    try:
-        resp = requests.get(url)
-    except requests.exceptions.RequestException as e:
-        print(f'Response Failed.')
-        return 1
+if 'http://www.' and 'https://www.' not in input_url:
+    if input_url[:4] == 'www.':
+        input_url = input_url[4:]
+    input_url = 'http://www.' + input_url
 
-    header = dict(collections.OrderedDict(resp.headers))
-    body = resp.text
+try:
+    r = requests.get(input_url)
+except requests.exceptions.RequestException as e:
+    print(f'Response Failed.')
+header = dict(collections.OrderedDict(resp.headers))
+body = resp.text
 
-    if args.body and not args.header:
-        print(body)
-        return 0
+if body_bool and not header_bool:
+    print(body)
 
-    if args.header and not args.body:
-        for section in sorted(header.items()):
-            print(f"{section[0]}: {section[1]}")
-        return 0
+if header_bool and not body_bool:
+    for section in sorted(header.items()):
+        print(f"{section[0]}: {section[1]}")
 
-    if (args.header and args.body) or (not args.header and not args.body):
-        for section in sorted(header.items()):
-            print(f"{section[0]}: {section[1]}")
-        print()
-        print(body)
-        return 0
-
-    return 1
-
-
-def build_parser():
-    parser = argparse.ArgumentParser(
-        prog='tihttp',
-        description=f'A tiny HTTP client for sending GET and POST requests.'
-    )
-
-    # positional arguments:
-    parser.add_argument(
-    'URL',
-    action='store',
-    )
-
-    # optional arguments:
-    parser.add_argument(
-    '-H',
-    '--header-only',
-    dest='header',
-    action='store_true',
-    help='Prints only the header of the Response.')
-
-    parser.add_argument(
-    '-B',
-    '--body-only',
-    dest='body',
-    action='store_true',
-    help='Prints only the body of the Response.')
-    return parser
-
-
-def run_main():
-    try:
-        sys.exit(main(sys.argv))
-    except Exception as e:
-        sys.stderr.write(e)
-        sys.exit(1)
-
-
-if __name__ == '__main__':
-    run_main()
+if (body_bool and header_bool) or (not body_bool and not header_bool):
+    for section in sorted(header.items()):
+        print(f"{section[0]}: {section[1]}")
+    print()
+    print(body)

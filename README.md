@@ -9,7 +9,7 @@ Each branch contains the HTTP client `tinyhttp` at a different stage of its deve
 3. [Argparse Module](https://github.com/NiklasTiede/tinyHTTPie/tree/3-Argparse-Module)
 4. [Distribution via install.sh](https://github.com/NiklasTiede/tinyHTTPie/tree/4-Distributing-by-Installscript)
 5. [Distribution via setup.py](https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File)
-6. Continous Integration
-7. Documentation
-8. Publishing at PyPI
-9. Publishing at Anaconda
+6. [Testing and CI](https://github.com/NiklasTiede/tinyHTTPie/tree/6-Testing-and-CI)
+7. [Documentation](https://github.com/NiklasTiede/tinyHTTPie/tree/7-Documentation)
+8. [Publishing at PyPI](https://github.com/NiklasTiede/tinyHTTPie/tree/8-Publishing-at-PyPI)
+9. [Publishing at Anaconda](https://github.com/NiklasTiede/tinyHTTPie/tree/9-Publishing-at-Anaconda)

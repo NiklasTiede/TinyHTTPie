@@ -8,14 +8,16 @@ pytest
 
 ```python
 
+
 ```
 
 CI: github actions
 
 ```bash
 
+
 ```
 
 <div>
-<p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/3-Argparse-Module"><< section 3</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File">section 5 >></a> </p>
+<p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File"><< section 5</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/7-Documentation">section 7 >></a> </p>
 </div>

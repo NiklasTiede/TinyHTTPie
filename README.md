@@ -49,7 +49,7 @@ Or install the project directly from github!
 pip install https://github.com/NiklasTiede/tinyHTTPie/archive/5-Distributing-by-Setup-File.zip
 ```
 
-Direct installation from github can take much time especially for projects which are bigger and use non-Python languages. Therefore PyPI and Anaconda are usually the preferred places.
+Direct installation from github can take much time especially for projects which are bigger and use non-Python languages. Therefore PyPI and Anaconda are usually the preferred ways to go.
 
 <div>
 <p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/4-Distributing-by-Installscript"><< section 4</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/6-Testing-and-CI">section 6 >></a> </p>

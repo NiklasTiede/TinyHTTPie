@@ -12,7 +12,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     license="MIT",
     package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),  # production install:  pip install .
+    packages=setuptools.find_packages(where="src"), 
     install_requires=[
         "requests>=2.21",
     ],

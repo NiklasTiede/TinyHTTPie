@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 import argparse
 import requests
@@ -53,7 +54,7 @@ def main(argv):
 def build_parser():
     parser = argparse.ArgumentParser(
         prog='tihttp',
-        description=f'A tiny HTTP client for sending GET and POST requests.'
+        description=f'A tiny HTTP client for sending GET requests.'
     )
 
     # positional arguments:

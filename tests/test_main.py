@@ -1,8 +1,8 @@
 
-from src.tihttp.main import main
+from tihttp import main
 
 
-def test_api_body(capsys):
+def test_GET_body(capsys):
     main(["-B", "http://jsonplaceholder.typicode.com/todos?userId=1"])
     captured = capsys.readouterr()
     result = captured.out

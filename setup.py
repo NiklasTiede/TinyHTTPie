@@ -12,16 +12,25 @@ setuptools.setup(
     long_description=pathlib.Path("README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
     license="MIT",
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"), 
+
+    # package_dir={"": "src"},
+    # packages=setuptools.find_packages(where="src"), 
+
+    py_modules = ["tihttp"],
+    
     install_requires=[
         "requests>=2.21",
     ],
+    extras_require={
+        'dev': [
+            'pytest', # pip install tihttp[dev]
+        ],
+    },
     platforms="linux",
     python_requires=">=3.5",
     entry_points={
         "console_scripts": 
-        ["tihttp=tihttp.main:run_main"]
+        ["tihttp=tihttp:run_main"]
         },
     classifiers=[
         "Development Status :: 3 - Alpha",

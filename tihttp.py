@@ -26,7 +26,7 @@ def main(argv=None):
     try:
         resp = requests.get(url)
     except requests.exceptions.RequestException as e:
-        print(f"Response Failed.")
+        print("Response Failed.")
         return 1
 
     header = dict(collections.OrderedDict(resp.headers))

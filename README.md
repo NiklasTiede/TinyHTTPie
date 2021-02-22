@@ -110,9 +110,11 @@ this executes everything
 ```bash
 tox
 tox -e py38   # if you wanna test only version 3.8 and skip others
+tox -e py38 -- test/main_test.py   # executes test only on single test
 ```
 
-toxtest
+Now that everything's running what about continuous integration? We use github actions to test it.
+
 Travis CI, Github Actions,
 codecov
 

@@ -60,6 +60,8 @@ And lastly we wanna publish it:
 
 ```
 
+So now you can reach it under https://tinyhttpie.readthedocs.io/en/latest/
+
 <div>
 <p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/6-Testing-and-CI"><< section 6</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/8-Publishing-at-PyPI">section 8 >></a> </p>
 </div>

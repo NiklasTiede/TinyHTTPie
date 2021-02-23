@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/niklas/anaconda3/envs/con_pack_test/bin/python",
+    "python.formatting.provider": "black"
+}

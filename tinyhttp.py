@@ -6,9 +6,9 @@ import collections
 import sys
 
 
-def main(argv):
+def main(argv=None):
     parser = build_parser()
-    args = parser.parse_args(argv[1:])
+    args = parser.parse_args(argv)
 
     url = ''
 
@@ -79,7 +79,7 @@ def build_parser():
 
 def run_main():
     try:
-        sys.exit(main(sys.argv))
+        sys.exit(main())
     except Exception as e:
         sys.stderr.write(e)
         sys.exit(1)

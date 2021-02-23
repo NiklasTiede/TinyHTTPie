@@ -7,10 +7,10 @@ Documentation can be supplied in different formats. Command line tools have a us
 Let's create some documentation! `sphinx` is a tool that will help us to create the documentation easily.
 
 ```bash
-pip install sphinx
+$ pip install sphinx
 
-mkdir docs
-cd docs
+$ mkdir docs
+$ cd docs
 ```
 
 Sphinx will ask a couple of questions to fill out the
@@ -27,15 +27,15 @@ $ sphinx-quickstart
 
 To create the documentation we have to use the `make html` command within the `docs` directory. This creates the HTML files of it.
 
-```bash
-cd ..
-make html
+```
+$ cd ..
+$ make html
 ```
 
 If we open the `index.html` file in the browser we can see how our documentation will look like. But its appearance is pretty puristic. Therefore we use an often used theme to let it look nicer.
 
 ```
-pip install sphinx_rtd_theme
+$ pip install sphinx_rtd_theme
 ```
 
 Now we have to customize the `conf.py` file. We add the following lines:
@@ -51,8 +51,8 @@ html_theme = 'sphinx_rtd_theme'
 
 And render again.
 
-```bash
-make html
+```
+$ make html
 ```
 
 Now it looks way better! Ok, next we wanna write some more content. readthedocs should written in the reStructuredText syntax. Here's a nice [cheat sheet](https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst). A previewer will speed up things. I've added some documentation about tinyHTTPie, see [index.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/index.rst), [install.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/install.rst) and [tutorial.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/tutorial.rst). The last step is to publish our documentation. We have to register at [readthedocs.org](https://readthedocs.org/) and connect it to our repository.

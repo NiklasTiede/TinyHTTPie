@@ -2,45 +2,24 @@
 
 This repository contains the code belonging to the sixth section of the article "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
 
-Projects like these are too small to benefit from testing. But it's the goal of this tutorial to show the full tool set when creating a python package. We're using `pytest` the most popular testing tool within the Python community. We create a `tests` folder at the root level and add `__init__.py` files to the `tests` and the `src` folder (So that pytest finds everything).
+Projects like these are too small to benefit from testing. But it's the goal of this tutorial to show the full tool set when creating a python package. We're using `pytest` the most popular testing tool within the Python community. We create a `tests` folder at the root level and add `__init__.py` and `test_tihttp.py` to it.
 
 ```python
 ├── LICENSE
 ├── README.md
 ├── setup.py
 ├── src
-│  └── tihttp
-│     ├── __init__.py
-│     └── main.py
+├── tihttp.py
 ├── tests
 │  ├── __init__.py
 │  ├── jsonplaceholder.json
-│  └── test_main.py
+│  └── test_tihttp.py
 ```
 
-To be able to import the argument parser
-we have to modify our `main.py` file. Now we can import the main-function and add arguments as list from within out `test_main.py` file to test our application.
+Then we write a test comparing the expected output of a GET request to an API.
 
 ```python
-def main(argv=None):
-
-    if not argv:
-        argv = sys.argv[1:]
-
-...
-
-def run_main():
-    try:
-        sys.exit(main())  # sys.argv
-    except Exception as e:
-        sys.stderr.write(e)
-        sys.exit(1)
-```
-
-For this test we compare the body of the response of a GET request with the expected response.
-
-```python
-from src.tihttp.main import main
+from tihttp import main
 
 def test_GET_body(capsys):
     main(["-B", "http://jsonplaceholder.typicode.com/todos?userId=1"])
@@ -51,13 +30,13 @@ def test_GET_body(capsys):
     assert result == output
 ```
 
-To test we just type `pytest`. The test was successful.
+Running pytest should be successful.
 
 ```bash
 pytest
 ```
 
-We add pytest to out extra reqiurements in the setup.py file.
+Thereafter we add pytest to out extra requirements in the `setup.py` file.
 
 ```python
 extras_require={
@@ -67,58 +46,95 @@ extras_require={
 },
 ```
 
-This will give us the possibility to install the extra dependencies for developers of the project easily by adding a [dev].
+This gives us the possibility to install extra dependencies (testing, linting tools etc.) of the project easily by adding a `[dev]` to the package name.
 
 ```bash
 pip install .[dev]
 pip install tihttp[dev]
 ```
 
-We tested this all with python 3.7.3. But how does our application behave when executed on a different interpreter version? Just test it against different python versions! We use `tox`.
-
-running tests in multiple virtualenvs
+We tested all of this with python 3.7.3. But how does our application behave when executed on a different interpreter version? Test it against different python versions! We use `tox`. It lets us run tests in multiple virtualenvs.
 
 ```bash
 pip install tox
 ```
 
-Then creating a `tox.ini` file.
+Tox knows what commands in which environments from a `tox.ini` file.
 
 ```ini
 [tox]
-envlist = py35,py36,py37,py38,py39
+envlist = py36,py37,py38,py39
 
 [testenv]
-# install pytest in the virtualenv where commands will be executed
-deps = pytest
+deps =
+    pytest
 commands =
-    # NOTE: you can run any command line tool here - not just tests
     pytest
 ```
 
-using tox will do the jobs. it creates venvs and executes the commands of the tox.ini file
-
-If you havent the python interpreters install them
+If you haven't all the python interpreters needed, install them:
 
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.5 python3.6 python3.7 python3.8 python3.9
 ```
 
-this executes everything
+Now let's test across different interpreters!
 
 ```bash
 tox
-tox -e py38   # if you wanna test only version 3.8 and skip others
+```
+
+If you wanna test against a specified environment or execute only one test use:
+
+```bash
+tox -e py38
 tox -e py38 -- test/main_test.py   # executes test only on single test
 ```
 
-Now that everything's running what about continuous integration? We use github actions to test it.
+Ok we did the test locally, but you're working in a team you're also using continuous integration. We set up a `integrate.yaml` file up to tell github actions what jobs to do.
 
-Travis CI, Github Actions,
-codecov
+```yaml
+name: Python package
 
-CI: github actions
+on: [push]
+
+jobs:
+  run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest pytest-cov
+          pip install -r requirements.txt
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Test with pytest
+        run: |
+          pytest
+```
 
 <div>
 <p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File"><< section 5</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/7-Documentation">section 7 >></a> </p>

@@ -6,10 +6,6 @@ import sys
 
 def main(argv=None):
 
-    # give test suite access to CLI
-    if not argv:
-        argv = sys.argv[1:]
-
     parser = build_parser()
     args = parser.parse_args(argv)
 
@@ -84,7 +80,7 @@ def build_parser():
 
 def run_main():
     try:
-        sys.exit(main())  # sys.argv
+        sys.exit(main()) 
     except Exception as e:
         sys.stderr.write(e)
         sys.exit(1)

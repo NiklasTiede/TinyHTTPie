@@ -6,7 +6,8 @@ Documentation can be supplied in different formats. Command line tools have a us
 
 Let's create some documentation! `sphinx` is a tool that will help us to create the documentation easily.
 
-```bash
+```
+
 $ pip install sphinx
 
 $ mkdir docs

@@ -67,7 +67,7 @@ $ anaconda upload home/niklas/anaconda3/conda-build/linux-64/tihttp-0.1.0-py37_0
 $ conda install -c niklastiede tihttp
 ```
 
-But building packages for different python interpreters versions and different operating system can be tedious. Bash scripting is the perfect way to automate these things.
+But building and uploading packages for different Python interpreter versions and different operating systems is tedious. This work can be automated by a bash script:
 
 ```bash
 #!/bin/bash

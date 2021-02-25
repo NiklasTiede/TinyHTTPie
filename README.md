@@ -4,7 +4,7 @@ This repository contains the code belonging to the seventh section of the articl
 
 Documentation can be supplied in different formats. Command line tools have a usage help (`--help`). For smaller projects the `README.md` can be sufficient enough whereas projects like libraries benefit from a more extensive hosted technical documentation (see [readthedocs](https://readthedocs.org/)).
 
-Let's create some documentation! `sphinx` is a tool that will help us to create the documentation easily.
+Let's create some documentation! `sphinx` is a tool that will help us to simplify this process.
 
 ```
 $ pip install sphinx
@@ -13,7 +13,7 @@ $ mkdir docs
 $ cd docs
 ```
 
-Sphinx will ask a couple of questions to fill out the
+Sphinx will ask a couple of questions:
 
 ```
 $ sphinx-quickstart
@@ -25,7 +25,7 @@ $ sphinx-quickstart
 > Project language [en]: enter
 ```
 
-To create the documentation we have to use the `make html` command within the `docs` directory. This creates the HTML files of it.
+To create the documentation we have to use the `make html` command within the `docs` directory. This creates the HTML of our documentation.
 
 ```
 $ cd ..
@@ -55,9 +55,9 @@ And render again.
 $ make html
 ```
 
-Now it looks way better! Ok, next we wanna write some more content. readthedocs should written in the reStructuredText syntax. Here's a nice [cheat sheet](https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst). A previewer will speed up things. I've added some documentation about tinyHTTPie, see [index.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/index.rst), [install.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/install.rst) and [tutorial.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/tutorial.rst). The last step is to publish our documentation. We have to register at [readthedocs.org](https://readthedocs.org/) and connect it to our repository.
+Now it looks way better! Ok, next we wanna write some more content. The documentation should written in the reStructuredText (.rst) syntax. Here's a nice [cheat sheet](https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst). A previewer will speed up things. I've added some documentation about tinyHTTPie, see [index.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/index.rst), [install.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/install.rst) and [tutorial.rst](https://github.com/NiklasTiede/tinyHTTPie/blob/7-Documentation/docs/source/tutorial.rst). The last step is to publish our documentation. We have to register at [readthedocs.org](https://readthedocs.org/) and let it hook our repository.
 
-Voilà! We created our [tinyHTTPie documentation](https://tinyhttpie.readthedocs.io/en/latest/)! I hope you see how easy it is to setup a good-looking documentation. :smiley:
+Voilà! A nice [tinyHTTPie documentation](https://tinyhttpie.readthedocs.io/en/latest/) was created! I hope you see how easy it is to setup such a good-looking documentation. :smiley:
 
 <div>
     <p align="center"><a href="https://github.com/NiklasTiede/tinyHTTPie/tree/6-Testing-and-CI"><< section 6</a> | <a href="https://github.com/NiklasTiede/tinyHTTPie/tree/8-Publishing-at-PyPI">section 8 >></a> </p>

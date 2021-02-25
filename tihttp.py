@@ -1,3 +1,4 @@
+
 import argparse
 import requests
 import collections
@@ -5,28 +6,23 @@ import sys
 
 
 def main(argv=None):
-
-    # give test suite access to CLI
-    if not argv:
-        argv = sys.argv[1:]
-
     parser = build_parser()
     args = parser.parse_args(argv)
 
-    url = ""
+    url = ''
 
     if args.URL:
         url = args.URL
 
-    if ("http://" or "https://" or "http://www." or "https://www.") not in url:
-        if url[:4] == "www.":
+    if ('http://' or 'https://' or 'http://www.' or 'https://www.') not in url:
+        if url[:4] == 'www.':
             url = url[4:]
-        url = "http://" + url
+        url = 'http://' + url
 
     try:
         resp = requests.get(url)
     except requests.exceptions.RequestException as e:
-        print(f"Response Failed.")
+        print(f'Response Failed.')
         return 1
 
     header = dict(collections.OrderedDict(resp.headers))
@@ -53,42 +49,40 @@ def main(argv=None):
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        prog="tihttp",
-        description=f"A tiny HTTP client for sending GET and POST requests.",
+        prog='tihttp',
+        description=f'A tiny HTTP client for sending GET and POST requests.'
     )
 
     # positional arguments:
     parser.add_argument(
-        "URL",
-        action="store",
+    'URL',
+    action='store',
     )
 
     # optional arguments:
     parser.add_argument(
-        "-H",
-        "--header-only",
-        dest="header",
-        action="store_true",
-        help="Prints only the header of the Response.",
-    )
+    '-H',
+    '--header-only',
+    dest='header',
+    action='store_true',
+    help='Prints only the header of the Response.')
 
     parser.add_argument(
-        "-B",
-        "--body-only",
-        dest="body",
-        action="store_true",
-        help="Prints only the body of the Response.",
-    )
+    '-B',
+    '--body-only',
+    dest='body',
+    action='store_true',
+    help='Prints only the body of the Response.')
     return parser
 
 
 def run_main():
     try:
-        sys.exit(main())  # sys.argv
+        sys.exit(main())
     except Exception as e:
         sys.stderr.write(e)
         sys.exit(1)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     run_main()

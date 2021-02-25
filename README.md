@@ -11,7 +11,7 @@ git checkout 4-Distributing-by-Installscript
 bash install.sh
 ```
 
-It will create the directory `MyScripts` in your home, copying `tinyhttp.py`, and `requirementx.txt` into it and rebuilt the virtual environment using `pipenv`. The shebang line is added to the top of `tinyhttp.py` the alias to your .bashrc/.zshrc or .aliases file.
+It will create the directory `MyScripts` in your home directory, copy `tinyhttp.py`, and `requirements.txt` into it and rebuild the virtual environment using `pipenv`. The shebang line is added to the top of `tinyhttp.py`, the alias to your `.bashrc`/`.zshrc` or `.aliases` file.
 
 ```bash
 tihttp -H google.com

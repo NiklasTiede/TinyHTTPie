@@ -8,7 +8,7 @@ Here we created a shell script called `install.sh` to make things easier for the
 git clone https://github.com/NiklasTiede/tinyHTTPie
 cd tinyHTTPie
 git checkout 4-Distributing-by-Installscript
-bash install.sh
+./install.sh
 ```
 
 It will create the directory `MyScripts` in your home directory, copy `tinyhttp.py`, and `requirements.txt` into it and rebuild the virtual environment using `pipenv`. The shebang line is added to the top of `tinyhttp.py`, the alias to your `.bashrc`/`.zshrc` or `.aliases` file.

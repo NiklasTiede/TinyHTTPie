@@ -1,0 +1,17 @@
+# Conda environment for astropy-healpix development
+#
+# Install:    conda env create -f environment-dev.yml
+# Update:     conda env update -f environment-dev.yml
+# Activate:   conda activate feedingorcas
+# Deactivate: conda deactivate
+
+name: tihttp
+channels:
+  - defaults
+  - conda-forge
+  - niklastiede
+dependencies:
+  - tihttp
+  - requests
+  - pip
+  - pytest

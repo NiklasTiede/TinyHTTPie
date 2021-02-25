@@ -1,8 +1,8 @@
 # 3. Argparse Module
 
-This repository contains the code belonging to the second section of the article "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
+This repository contains the code belonging to the third section of the article "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
 
-Here we took advantage of Python's sys module. This gives us the power to pass arguments from outside the script.
+Here we took advantage of Python's `argparse` module. It's easier to handle arguments with argparse than using the `sys` module alone. Argparse creates a `--help` flag for us, which allows nice introspection into the capabilities of the command line tool.
 
 ```python
 #!/usr/bin/env python

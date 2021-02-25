@@ -8,7 +8,6 @@ Projects like these are too small to benefit from testing. But it's the goal of 
 ├── LICENSE
 ├── README.md
 ├── setup.py
-├── src
 ├── tihttp.py
 ├── tests
 │  ├── __init__.py

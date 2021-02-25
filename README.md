@@ -52,4 +52,4 @@ Date: Sat, 20 Feb 2021 17:08:42 GMT
 ]
 ```
 
-I hope you could find something useful for yourself, I'm thankful for every pull request :smile:
+I hope you will find something useful for yourself, I'm thankful for every pull request garding bugs, typos etc. :smiley:

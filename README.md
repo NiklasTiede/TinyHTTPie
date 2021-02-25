@@ -35,7 +35,7 @@ Running pytest should be successful.
 $ pytest
 ```
 
-Thereafter we add pytest to out extra requirements in the `setup.py` file.
+Thereafter we add pytest to our extra requirements in the `setup.py` file.
 
 ```python
 extras_require={

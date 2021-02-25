@@ -1,8 +1,6 @@
-# This installation script moves the files into a MyScripts folder into your home dir
-# Python version checked, pipenv installed if not existent
-# pipenv venv created, shebang line added, giving permissions
-# create permanent alias 
+#!/bin/bash
 
+# creates a directory which contains scripts like tinyHTTPie:
 if [[ ! -d ~/MyScripts ]]; then
     mkdir ~/MyScripts
     folder1=~/MyScripts
@@ -14,6 +12,7 @@ if [[ ! -d ~/MyScripts/tinyhttp ]]; then
     echo "${folder2} was generated."
 fi
 
+
 # copy files into ~/MyScripts/tihttp
 PWD=$(pwd)
 REQUIREMENTS="$PWD/requirements.txt"
@@ -23,6 +22,7 @@ TARGET=~/MyScripts/tinyhttp
 cp "$REQUIREMENTS" "$TARGET"
 cp "$SCRIPT" "$TARGET"
 cd ~/MyScripts/tinyhttp
+
 
 # check python version
 PYVER=$(python --version)
@@ -34,6 +34,7 @@ elif [[ $(echo $CURRENT_PY_VERSION | grep '3.'*) ]]; then
     echo "first digit is 3, you're python versions fulfills the requirements!"
 fi
 
+
 # check pipenv
 if [[ ! $(pipenv) ]]; then
     echo "pipenv not existent, so installing via pip..."
@@ -41,12 +42,15 @@ if [[ ! $(pipenv) ]]; then
     echo "...pipenv was installed?"
 fi
 
+
 # rebuild virtual env from requirements-file
 pipenv install -r requirements.txt
+
 
 # adding shebang line to top of script:
 pybin=$(pipenv --py)
 echo -e "#\!${pybin}\n\n$(cat tinyhttp.py.py)" > tinyhttp.py
+
 
 # check if shebang line represents the pipenv environemtn:
 EXIS_HEADLINE=$(head -n 1 tinyhttp.py)
@@ -57,8 +61,10 @@ elif [[ $EXIS_HEADLINE != $EXP_HEADLINE || ${#EXIS_HEADLINE} != ${#EXP_HEADLINE}
     echo "shebang was NOT added correctly!"
 fi
 
+
 # change file permissions
 chmod +x ~/MyScripts/tiniHTTP/tiny_HTTPie_clone.py
+
 
 # add alias to file containing the aliases 
 SHELL=$(printenv SHELL)
@@ -84,31 +90,3 @@ elif [[ $MYSHELL  == "bash" ]]; then
         echo "You're storing your files within the .bashrc file."
     fi
 fi
-
-# echo "$ALIASFILE is where we placed the alias."
-
-# # change permissions
-# SCRIPTPATH=~/MyScripts/tinyhttp/tinyhttp.py
-# chmod +x $SCRIPTPATH
-
-# # adding alias (I prefer using an alias, instead of polluting my PATH)
-# echo $SCRIPTPATH
-# echo "\n# alias for the tinyHTTP script (stored within ~/MyScripts/tinyhttp)\nalias tihttp='$SCRIPTPATH'" >> $ALIASFILE
-# source $ALIASFILE
-
-# # test
-# if [[ ! $(tihttp) ]]; then
-#     echo "tihttp alias is not working"
-#     echo "Instead this scripts tries to add tihttp to your PATH"
-# fi
-
-# # I prefer using an alias, instead of adding it to the PATH!
-# # export PATH="$HOME/MyScripts/tinyhttp:$PATH"
-
-# # test (tihttp --version)
-# EXIS_TEST=$(tihttp --version)
-# EXP_TEST
-# if [[ $EXIS_TEST != $EXP_TEST ]]; then
-#     echo "Not properly installed"
-# elif [[ $EXIS_TEST != $EXP_TEST ]]; then
-#     echo "tihttp was installed successfully!"

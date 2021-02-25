@@ -16,7 +16,7 @@ Projects like these are too small to benefit from testing. But it's the goal of 
 │  └── test_tihttp.py
 ```
 
-Then we write a test comparing the expected output of a GET request to an API.
+Then we write a test comparing the output of a GET request.
 
 ```python
 from tihttp import main
@@ -46,20 +46,20 @@ extras_require={
 },
 ```
 
-This gives us the possibility to install extra dependencies (testing, linting tools etc.) of the project easily by adding a `[dev]` to the package name.
+This gives us the possibility to install extra dependencies (testing, linting tools etc.) easily by adding a `[dev]` to the package name.
 
 ```bash
 pip install .[dev]
 pip install tihttp[dev]
 ```
 
-We tested all of this with python 3.7.3. But how does our application behave when executed on a different interpreter version? Test it against different python versions! We use `tox`. It lets us run tests in multiple virtualenvs.
+We tested all of this with python 3.7.3. But how does our application behave when executed on a different interpreter version? So let's test it against different Python versions! We use `tox`. It lets us run tests in multiple virtualenvs.
 
 ```bash
 pip install tox
 ```
 
-Tox knows what commands in which environments from a `tox.ini` file.
+Tox needs a recipe to know which virtualenv/commands to create/execute. This recipe the `tox.ini` file.
 
 ```ini
 [tox]
@@ -72,7 +72,7 @@ commands =
     pytest
 ```
 
-If you haven't all the python interpreters needed, install them:
+If some of the Python interpreters are missing on your system, install them from the deadsnakes archive:
 
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -85,14 +85,14 @@ Now let's test across different interpreters!
 tox
 ```
 
-If you wanna test against a specified environment or execute only one test use:
+If you wanna test against a specific environment or execute only one test, then type:
 
 ```bash
 tox -e py38
-tox -e py38 -- test/main_test.py   # executes test only on single test
+tox -e py38 -- test/main_test.py   # executes only single test
 ```
 
-Ok we did the test locally, but you're working in a team you're also using continuous integration. We set up a `integrate.yaml` file up to tell github actions what jobs to do.
+Ok we did the test locally, but when working in a team using continuous integration is pretty convenient. We set a `integrate.yaml` file up to tell github actions what jobs to do. 
 
 ```yaml
 name: Python package

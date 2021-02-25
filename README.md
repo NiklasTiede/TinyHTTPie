@@ -61,8 +61,8 @@ if (body_bool and header_bool) or (not body_bool and not header_bool):
 
 Now we can decide to print only the header of the GET request:
 
-```bash
-tihttp -h https://the-coding-lab.com/
+```
+$ tihttp -h https://the-coding-lab.com/
 ```
 
 <div>

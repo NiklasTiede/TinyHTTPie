@@ -34,19 +34,19 @@ If you're creating a command line tool, it tool should be easily called by its n
 
 We can now easily install the tool locally.
 
-```bash
-git clone https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File.git
-cd tinyHTTPie
-pip install .
-tihttp -H google.com        # test
+```
+$ git clone https://github.com/NiklasTiede/tinyHTTPie/tree/5-Distributing-by-Setup-File.git
+$ cd tinyHTTPie
+$ pip install .
+$ tihttp -H google.com        # test
 ```
 
 BTW: `pip install -e .` is the editable mode, so this connects your project with your virtual environment so that you can easily continue developing your project with no need to repeatedly install/uninstall it.
 
 Or install the project directly from github!
 
-```bash
-pip install https://github.com/NiklasTiede/tinyHTTPie/archive/5-Distributing-by-Setup-File.zip
+```
+$ pip install https://github.com/NiklasTiede/tinyHTTPie/archive/5-Distributing-by-Setup-File.zip
 ```
 
 Direct installation from github can take much time especially for projects which are bigger and use non-Python languages. Therefore PyPI and Anaconda are usually the preferred places where to to go.

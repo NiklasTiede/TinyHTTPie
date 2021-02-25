@@ -2,7 +2,7 @@
 
 This repository contains the code to the multi-part series "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
 
-Each branch contains the HTTP client `tinyhttp` at a different stage of its development.
+Each branch contains the code of the HTTP client `tinyhttp` at a different stage of its development.
 
 <h1 id="contents" ><img src="docs/contents.png" width="30px"> Contents</h1>
 

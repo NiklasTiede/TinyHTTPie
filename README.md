@@ -1,6 +1,6 @@
 ## 1. A Simple Script
 
-This repository contains the code belonging to the first section of the article "The Evolution of a Script".
+This repository contains the code belonging to the first section of the article "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
 
 ```python
 import requests

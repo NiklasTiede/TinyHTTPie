@@ -4,7 +4,7 @@ This repository contains the code belonging to the sixth section of the article 
 
 Projects like these are too small to benefit from testing. But it's the goal of this tutorial to show the full tool set when creating a python package. We're using `pytest` the most popular testing tool within the Python community. We create a `tests` folder at the root level and add `__init__.py` and `test_tihttp.py` to it.
 
-```python
+```
 ├── LICENSE
 ├── README.md
 ├── setup.py
@@ -32,8 +32,8 @@ def test_GET_body(capsys):
 
 Running pytest should be successful.
 
-```bash
-pytest
+```
+$ pytest
 ```
 
 Thereafter we add pytest to out extra requirements in the `setup.py` file.
@@ -48,15 +48,15 @@ extras_require={
 
 This gives us the possibility to install extra dependencies (testing, linting tools etc.) easily by adding a `[dev]` to the package name.
 
-```bash
-pip install .[dev]
-pip install tihttp[dev]
+```
+$ pip install .[dev]
+$ pip install tihttp[dev]
 ```
 
 We tested all of this with python 3.7.3. But how does our application behave when executed on a different interpreter version? So let's test it against different Python versions! We use `tox`. It lets us run tests in multiple virtualenvs.
 
-```bash
-pip install tox
+```
+$ pip install tox
 ```
 
 Tox needs a recipe to know which virtualenv/commands to create/execute. This recipe the `tox.ini` file.
@@ -74,22 +74,22 @@ commands =
 
 If some of the Python interpreters are missing on your system, install them from the deadsnakes archive:
 
-```bash
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt install python3.5 python3.6 python3.7 python3.8 python3.9
+```
+$ sudo add-apt-repository ppa:deadsnakes/ppa
+$ sudo apt install python3.5 python3.6 python3.7 python3.8 python3.9
 ```
 
 Now let's test across different interpreters!
 
-```bash
-tox
+```
+$ tox
 ```
 
 If you wanna test against a specific environment or execute only one test, then type:
 
-```bash
-tox -e py38
-tox -e py38 -- test/main_test.py   # executes only single test
+```
+$ tox -e py38
+$ tox -e py38 -- test/main_test.py   # executes only single test
 ```
 
 Ok we did the test locally, but when working in a team using continuous integration is pretty convenient. We set a `integrate.yaml` file up to tell github actions what jobs to do. 

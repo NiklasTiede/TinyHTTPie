@@ -21,7 +21,7 @@ setuptools.setup(
             'pytest',
         ],
     },
-    platforms=["linux"],
+    platforms=["any"],
     python_requires=">=3.6",
     entry_points={"console_scripts": ["tihttp = tihttp:run_main"]},
     classifiers=[

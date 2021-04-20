@@ -5,6 +5,8 @@ import collections
 import sys
 
 
+__version__ = '0.1.0'
+
 def main(argv=None):
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -73,6 +75,14 @@ def build_parser():
     dest='body',
     action='store_true',
     help='Prints only the body of the Response.')
+    
+    parser.add_argument(
+    '-v',
+    '--version',
+    action='version',
+    help='Show version number and exit.',
+    version=f'%(prog)s {__version__}',
+    )
     return parser
 
 

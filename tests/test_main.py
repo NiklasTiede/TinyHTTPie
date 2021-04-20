@@ -1,8 +1,7 @@
-from src.tihttp.main import main
-
+import tihttp
 
 def test_api_body(capsys):
-    main(["-B", "http://jsonplaceholder.typicode.com/todos?userId=1"])
+    tihttp.main(["-B", "http://jsonplaceholder.typicode.com/todos?userId=1"])
     captured = capsys.readouterr()
     result = captured.out
     with open("tests/jsonplaceholder.json", "r") as f:

@@ -10,7 +10,10 @@ setuptools.setup(
     description="tiny HTTP client for making GET requests.",
     long_description=pathlib.Path("README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
-    url="https://github.com/NiklasTiede/tinyHTTPie",
+    project_urls={
+        'GitHub': 'https://github.com/NiklasTiede/tinyHTTPie',
+        'Documentation': 'https://tinyhttpie.readthedocs.io',
+    },
     license="MIT",
     py_modules = ["tihttp"],
     install_requires=[      
@@ -21,7 +24,7 @@ setuptools.setup(
             'pytest',
         ],
     },
-    platforms=["linux"],
+    platforms=["linux", "windows"],
     python_requires=">=3.6",
     entry_points={"console_scripts": ["tihttp = tihttp:run_main"]},
     classifiers=[

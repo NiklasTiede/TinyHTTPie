@@ -2,7 +2,7 @@
 
 This repository contains the code to the multi-part series "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
 
-Each branch contains the HTTP client `tinyhttp` at a different stage of its development.
+Each branch contains the code of the HTTP client `tinyhttp` at a different stage of its development. But don't forget that this repository is meant to be a tutorial about python packaging, so if you just need an awesome http client, use [HTTPie](https://github.com/httpie/httpie) :smiley:
 
 <h1 id="contents" ><img src="docs/contents.png" width="30px"> Contents</h1>
 
@@ -52,4 +52,4 @@ Date: Sat, 20 Feb 2021 17:08:42 GMT
 ]
 ```
 
-I hope you could find something useful for yourself, I'm thankful for every pull request :smile:
+I hope you will find something useful for yourself, I'm thankful for every pull request regarding bugs, typos etc. :smiley:

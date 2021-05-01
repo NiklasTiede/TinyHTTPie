@@ -62,7 +62,7 @@ if (body_bool and header_bool) or (not body_bool and not header_bool):
 Now we can decide to print only the header of the GET request:
 
 ```
-$ tihttp -h https://the-coding-lab.com/
+$ python tinyhttp.py -h https://the-coding-lab.com/
 ```
 
 <div>

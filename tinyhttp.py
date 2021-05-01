@@ -32,7 +32,7 @@ if 'http://www.' and 'https://www.' not in input_url:
     input_url = 'http://www.' + input_url
 
 try:
-    r = requests.get(input_url)
+    resp = requests.get(input_url)
 except requests.exceptions.RequestException as e:
     print(f'Response Failed.')
 header = dict(collections.OrderedDict(resp.headers))

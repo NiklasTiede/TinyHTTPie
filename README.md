@@ -5,8 +5,6 @@ This repository contains the code belonging to the second section of the article
 Here we took advantage of Python's `sys` module. This gives us the power to pass arguments from outside the script.
 
 ```python
-#!/usr/bin/python
-
 import requests
 import collections
 import sys
@@ -39,7 +37,7 @@ if 'http://www.' and 'https://www.' not in input_url:
     input_url = 'http://www.' + input_url
 
 try:
-    r = requests.get(input_url)
+    resp = requests.get(input_url)
 except requests.exceptions.RequestException as e:
     print(f'Response Failed.')
 header = dict(collections.OrderedDict(resp.headers))

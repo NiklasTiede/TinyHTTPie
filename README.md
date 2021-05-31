@@ -1,4 +1,4 @@
-# tinyHTTPie
+# TinyHTTPie
 
 This repository contains the code to the multi-part series "[The Evolution of a Script](https://the-coding-lab.com/posts/the-evolution-of-a-script/)".
 
